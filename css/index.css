@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  color: #eeeeee;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Ubuntu;
+  background: linear-gradient(#180834 0, #26032c 100vh, #101010 100vh, #0f548a);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 10;
+}
+
+.nav-box {
+  width: calc(100% - 20px);
+  margin: auto;
+  max-width: 1200px;
+  text-align: right;
+}
+
+.headerLogo img {
+  width: 60px;
+  height: 60px;
+  float: left;
+}
+
+nav {
+  background-color: rgba(16, 16, 16, 0.9);
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  height: 60px;
+}
+
+.nav-list-link {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5em;
+  display: inline-block;
+  height: 60px;
+  line-height: 60px;
+  width: 150px;
+  text-align: center;
+  transition: all 0.3s;
+}
+.nav-list-link:hover {
+  letter-spacing: 5px;
+}
+
+main {
+  width: calc(100% - 20px);
+  margin: auto;
+  max-width: 1200px;
+}
+
+#title {
+  text-align: center;
+  height: 100vh;
+  background: url(../img/Backgrounds/Taieri_mini.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+#title img {
+  width: 100%;
+  max-width: 900px;
+  display: block;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#about {
+  padding: 100px 25px;
+}
+
+.about-title {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 40px;
+  margin-bottom: 25px;
+}
+
+.about-content,
+#about img {
+  width: 50%;
+  display: block;
+  float: left;
+}
+
+.about-content {
+  width: calc(50% - 20px);
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+@media only screen and (max-width: 800px) {
+  .about-content,
+  #about img {
+    width: 100%;
+    display: block;
+    float: clear;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+	.nav-list-link{
+		display: none;
+	}
+  }
+  
