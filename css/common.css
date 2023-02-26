@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  color: #eeeeee;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Ubuntu;
+  background: linear-gradient(
+    #180834 0,
+    #26032c calc(100vh + 0px),
+    rgb(16, 16, 16) 100vh
+  );
+}
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 10;
+}
+
+.nav-box {
+  width: calc(100% - 20px);
+  margin: auto;
+  max-width: 1200px;
+  text-align: right;
+}
+
+.headerLogo img {
+  width: 60px;
+  height: 60px;
+  float: left;
+}
+
+nav {
+  background-color: rgba(16, 16, 16, 0.9);
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  height: 60px;
+}
+
+.nav-list-link {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5em;
+  display: inline-block;
+  height: 60px;
+  line-height: 60px;
+  width: 150px;
+  text-align: center;
+  transition: all 0.3s;
+}
+.nav-list-link:hover {
+  letter-spacing: 5px;
+}
+#nav-hamburger{
+  display: none;
+  width: 40px;
+  height: calc(60px - 12.5px);
+  padding-top: 12.5px;
+  cursor: pointer;
+}
+#nav-hamburger span{
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: white;
+  margin: 5px 0;
+}
+
+#mobileMenu{
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 60px - 50px);
+  background-color: rgba(16, 16, 16, 0.9);
+  padding-top: 50px;
+  display: none;
+  animation: fadein 0.3s forwards;
+  opacity: 0;
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fadeout{
+  animation: fadeout 0.3s forwards!important;
+  opacity: 1;
+}
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#mobileMenu a{
+  text-decoration: none;
+  color: white;
+  font-size: 1.5em;
+  display: block;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+#nav-hamburger p{
+  display: none;
+  font-size: 40px;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  line-height: 60px;
+  width: 40px;
+}
+
+main {
+  width: calc(100% - 20px);
+  margin: auto;
+  max-width: 1200px;
+}
+footer{
+  margin-top: 100px;
+  background-color: rgb(16, 16, 16);
+  text-align: center;
+  padding: 100px 0;
+}
+footer img{
+  max-width: 90%;
+  width: 150px;
+}
