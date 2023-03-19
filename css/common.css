@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   color: #eeeeee;
+  box-sizing: border-box;
 }
 
 html {
@@ -148,4 +149,13 @@ footer{
 footer img{
   max-width: 90%;
   width: 150px;
+}
+
+@media only screen and (max-width: 550px) {
+  .nav-list-link {
+    display: none;
+  }
+  #nav-hamburger{
+    display: inline-block;
+  }
 }

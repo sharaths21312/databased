@@ -32,8 +32,13 @@ main{
     border: 1px solid #fff;
     cursor: pointer;
     transition: 0.3s background-color, 0.3s color;
+    margin: 0 5px;
 }
-.filter button:hover{
+.filter button:first-child{
+    margin-left: 0;
+}
+/* .filter button:hover, */
+ .filter button.active{
     background-color: #fff;
     color: rgb(6, 6, 61);
 }
@@ -54,3 +59,94 @@ main{
 .show {
     display: block;
   }
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+}
+.card{
+    display: inline-bloc;
+    float: left;
+    width: calc(100% / 3 - 5px);
+    min-width: max-content; 
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    margin: 5px auto;
+    border-radius: 10px;
+}
+.card:nth-child(3n){
+    margin-right: 5px;
+}
+.card:nth-child(3n+1){
+    margin-left: 5px;
+}
+.card:nth-child(3n+2){
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#problem1 {
+    position: relative;
+    top:40px;
+    left: 30px;
+}
+
+@media only screen and (max-width: 700px){
+    .card{
+        display: block;
+        width: calc(100% / 2 - 4px);
+        min-width: min-content;
+        margin-left: 0!important;
+        margin-right: 0!important;
+    }
+}
+.card h2{
+    color:rgb(6, 6, 61);
+}
+.card .difficultyTag{
+    color: white;
+    padding: 5px 10px;
+    margin: 10px 5px 5px 0;
+    display: inline-block;
+    width: fit-content;
+    border-radius: 10px;
+}
+.card .difficultyTag.Easy{
+    background-color: #2f7a2f;
+}
+.card .difficultyTag.Medium{
+    background-color: #f7b500;
+}
+.card .difficultyTag.Hard{
+    background-color: #f70000;
+}
+.card .topicTag span{
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    margin: 5px 5px;
+    display: inline-block;
+    width: fit-content;
+    border-radius: 10px;
+
+}
+.card .topicTag span:first-child{
+    margin-left: 0;
+}
+.card a{
+    display: block;
+    text-align: center;
+    margin: 5px 0 0 0;
+    padding: 10px 20px;
+    background-color: rgb(6, 6, 61);
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s background-color, 0.3s color;
+
+}
+.card a:hover{
+    background-color: white;
+    color: rgb(6, 6, 61);
+}

@@ -64,49 +64,38 @@
 
     <h1>
       Learn
-    </h1>
+      </h1>
 
   </div>
   <main>
-    <div class="filter">
+    <div class="filter" data-type="topic">
       <h3>Topics</h3>
-
-      <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-      <button class="btn" onclick="filterSelection('DS-Arrays')"> DS-Arrays</button>
-      <button class="btn" onclick="filterSelection('Algorithms')"> Algorithms</button>
+      <button class="active" data="Arrays">Arrays</button>
+      <button class="active" data="Greedy">Greedy</button>
     </div>
-    <div class="filter">
+    <div class="filter" data-type="difficulty">
       <h3>Difficulty</h3>
-      <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-      <button class="btn" onclick="filterSelection('easy')"> Easy</button>
-      <button class="btn" onclick="filterSelection('medium')"> Medium</button>
-      <button class="btn" onclick="filterSelection('difficult')"> Difficult</button>
-      <div class="container">
-        <div class="filterDiv easy DS-Arrays">Problem 1-easy DS-Arrays</div>
-        <div class="filterDiv medium Algorithms">Problem 1-medium Algorithms</div>
-        <div class="filterDiv easy  DS-Arrays">Problem 1-easy DS-Arrays</div>
-        <div class="filterDiv medium  DS-Arrays">Problem 1-medium DS-Arrays</div>
-        <div class="filterDiv easy Algorithms">Problem 1-easy Algorithms</div>
-        <div class="filterDiv medium Algorithms">Problem 1-medium Algorithms</div>
-        <div class="filterDiv difficult Algorithms">Problem 1-difficult Algorithms</div>
-        <div class="filterDiv difficult Algorithms">Problem 1-difficult Algorithms</div>
-        <div class="filterDiv medium Algorithms">Problem 1-medium Algorithms</div>
-        <div class="filterDiv medium DS-Arrays">Problem 1-medium DS-Arrays</div>
-        <div class="filterDiv medium DS-Arrays">Problem 1-medium DS-Arrays</div>
-        <div class="filterDiv medium DS-Arrays">Problem 1-medium DS-Arrays</div>
-        <div class="filterDiv difficult DS-Arrays">Problem 1-difficult DS-Arrays</div>
+      <button class="active" data="hard">Hard</button>
+      <button class="active" data="medium">Medium</button>
+      <button class="active" data="easy">Easy</button>
+    </div>
+    <div id="container">
+      <div class="cards">
+        <div class="card" id="problem1">Problem 1   </div>
+        <div class="card">Problem 2</div>
+        <div class="card">Problem 3</div>
+        <div class="card">Problem 4</div>
+        <div class="card">Problem 5</div>
+        <div class="card">Problem 6</div>
+        <div class="card">Problem 7</div>
+        <div class="card">Problem 8</div>
       </div>
-
-      <!--<button>
-        Hard
-      </button>
-      <button>Medium</button>
-      <button>Easy</button>-->
     </div>
   </main>
 
 
   <footer>
+
     <img src="../img/Logo_transparent.png">
   </footer>
   <script src="../js/common.js"></script>
