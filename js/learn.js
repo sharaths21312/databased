@@ -44,6 +44,9 @@ fetch(
         </div>`;
     });
 });
-window.addEventListener('resize', function(event) {
-}, true);
+// window.addEventListener('resize', function(event) {
+//     document.querySelectorAll(".card").forEach(function(card){
+//         card.style.top = card.nth-child.max_height + "px";
+//     });
+// }, true);
 

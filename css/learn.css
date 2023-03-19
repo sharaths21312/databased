@@ -13,6 +13,8 @@
 
 main{
     margin: 50px auto;
+    overflow: hidden;
+     
 }
 
 .filter{
@@ -61,22 +63,29 @@ main{
   }
 .cards{
     display: flex;
+    
     flex-wrap: wrap;
     justify-content: center;
     margin: 20px 0;
 }
 .card{
-    display: inline-bloc;
+    
+    /* display: ; */
+    
+    /* z-index: -1.0 ; */
+    width: calc(100% / 3 - 15px);
     float: left;
-    width: calc(100% / 3 - 5px);
-    min-width: max-content; 
+    min-height: max-content;  
     background-color: rgba(255, 255, 255, 0.8);
-    padding: 15px;
-    margin: 5px auto;
+    padding:15px;
+    margin: 5px 10px;
     border-radius: 10px;
+
 }
+
 .card:nth-child(3n){
-    margin-right: 5px;
+    /* float: down; */
+    max_height: calc(max(height (3n-1), height(3n-2), height(3n-3)))px; 
 }
 .card:nth-child(3n+1){
     margin-left: 5px;
@@ -85,20 +94,47 @@ main{
     margin-left: 0;
     margin-right: 0;
 }
-
+/* .card {
+    background-color: transparent;
+    outline: none;
+    border: 0;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: white;
+    color: black;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    cursor: pointer;
+    transition: 0.3s all;
+  } */
 #problem1 {
     position: relative;
     top:40px;
     left: 30px;
+
 }
 
 @media only screen and (max-width: 700px){
     .card{
         display: block;
-        width: calc(100% / 2 - 4px);
-        min-width: min-content;
+        width: calc(100% / 2 -4px);
+        min-height: max-content;
         margin-left: 0!important;
         margin-right: 0!important;
+        
+    }
+    .card:nth-child(2n+1){
+         float: down; 
+      /* margin-top: calc(max(width(2n-1), width(2n))*2)px; */
+       max_height: calc(max(height (2n-2), height(2n-1)))px; 
+    }
+    .card:nth-child(2n)
+    {
+        float: left;
     }
 }
 .card h2{
