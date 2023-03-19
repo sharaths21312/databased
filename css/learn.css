@@ -1,0 +1,129 @@
+#title {
+  background-image: url(../img/backgroundsbundle/Whangaehu.png);
+  text-align: center;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+#title h1 {
+  font-size: 25vw;
+  line-height: 100vh;
+}
+
+main {
+  margin: 50px auto;
+}
+
+.filter {
+  margin: 20px 0;
+}
+
+.filter h3 {
+  margin-bottom: 5px;
+}
+
+.filter button {
+  background-color: transparent;
+  color: #fff;
+  font-size: 16px;
+  padding: 5px 15px;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  transition: 0.3s background-color, 0.3s color;
+  margin: 0 5px;
+}
+.filter button:first-child {
+  margin-left: 0;
+}
+/* .filter button:hover, */
+.filter button.active {
+  background-color: #fff;
+  color: rgb(6, 6, 61);
+}
+.container {
+  overflow: hidden;
+}
+
+.filterDiv {
+  float: left;
+  background-color: #2f7a2f;
+  color: #120202;
+  width: 100px;
+  /*line-height: 100px;*/
+  text-align: center;
+  margin: 2px;
+  display: none; /* Hidden by default */
+}
+.show {
+  display: block;
+}
+
+#container {
+  overflow: hidden;
+  display: grid;
+  /* gap: 10px;   */
+  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+  grid-template-rows: 1px;
+}
+.card {
+  display: block;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  height: fit-content;
+}
+
+.card h2 {
+  color: rgb(6, 6, 61);
+  padding: 10px;
+}
+.card .tags{
+    padding: 0 10px;
+}
+.card .difficultyTag {
+  color: white;
+  padding: 5px 10px;
+  margin: 10px 5px 5px 0;
+  display: inline-block;
+  width: fit-content;
+  border-radius: 10px;
+}
+.card .difficultyTag.Easy {
+  background-color: #2f7a2f;
+}
+.card .difficultyTag.Medium {
+  background-color: #f7b500;
+}
+.card .difficultyTag.Hard {
+  background-color: #f70000;
+}
+.card .topicTag span {
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  margin: 5px 5px;
+  display: inline-block;
+  width: fit-content;
+  border-radius: 10px;
+}
+.card .topicTag span:first-child {
+  margin-left: 0;
+}
+.card a {
+  display: block;
+  text-align: center;
+  margin: 5px 0 0 0;
+  padding: 10px 20px;
+  background-color: rgb(6, 6, 61);
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.3s all;
+}
+.card a:hover {
+  background-color: white;
+  color: rgb(6, 6, 61);
+  letter-spacing: 1px;
+  font-weight: 600;
+}

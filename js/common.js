@@ -1,3 +1,9 @@
+document.querySelector("#loader").classList.add("fadeout");
+setTimeout(() => {
+    document.querySelector("#loader").style.display = "none";
+    document.querySelector("#loader").classList.remove("fadeout");
+}, 300);
+
 document.querySelector("#nav-hamburger").addEventListener("click", function () {
     if (document.querySelector("#nav-hamburger").getAttribute("data-state") == "inactive") {
         openMenu();
