@@ -13,8 +13,6 @@
 
 main{
     margin: 50px auto;
-    overflow: hidden;
-     
 }
 
 .filter{
@@ -61,82 +59,34 @@ main{
 .show {
     display: block;
   }
-.cards{
+#container {
     display: flex;
-    
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 20px 0;
+    width: 100%;
+}
+.card_container{
+    /* position: absolute; */
+    /* justify-content: center; */
+    min-width: 300px;
+    padding: 0px 5px;
 }
 .card{
-    
-    /* display: ; */
-    
-    /* z-index: -1.0 ; */
-    width: calc(100% / 3 - 15px);
-    float: left;
-    min-height: max-content;  
+    max-width: 100%;
     background-color: rgba(255, 255, 255, 0.8);
-    padding:15px;
-    margin: 5px 10px;
+    padding: 10px;
+    margin: 5px auto;
     border-radius: 10px;
-
 }
 
-.card:nth-child(3n){
-    /* float: down; */
-    max_height: calc(max(height (3n-1), height(3n-2), height(3n-3)))px; 
-}
-.card:nth-child(3n+1){
-    margin-left: 5px;
-}
-.card:nth-child(3n+2){
-    margin-left: 0;
-    margin-right: 0;
-}
-/* .card {
-    background-color: transparent;
-    outline: none;
-    border: 0;
-    border-radius: 5px;
-    padding: 5px 10px;
-    background-color: white;
-    color: black;
-    font-weight: 600;
-    font-family: "Montserrat", sans-serif;
-    text-transform: uppercase;
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    cursor: pointer;
-    transition: 0.3s all;
-  } */
-#problem1 {
-    position: relative;
-    top:40px;
-    left: 30px;
 
-}
-
-@media only screen and (max-width: 700px){
+/* @media only screen and (max-width: 700px){
     .card{
         display: block;
-        width: calc(100% / 2 -4px);
-        min-height: max-content;
+        width: calc(100% / 2 - 4px);
+        min-width: min-content;
         margin-left: 0!important;
         margin-right: 0!important;
-        
     }
-    .card:nth-child(2n+1){
-         float: down; 
-      /* margin-top: calc(max(width(2n-1), width(2n))*2)px; */
-       max_height: calc(max(height (2n-2), height(2n-1)))px; 
-    }
-    .card:nth-child(2n)
-    {
-        float: left;
-    }
-}
+} */
 .card h2{
     color:rgb(6, 6, 61);
 }
