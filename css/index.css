@@ -63,15 +63,6 @@
   }
 }
 
-@media only screen and (max-width: 550px) {
-  .nav-list-link {
-    display: none;
-  }
-  #nav-hamburger{
-    display: inline-block;
-  }
-}
-
 #eventsGrid > div {
   float: left;
   padding: 10px 10px 100px 10px;
@@ -148,6 +139,7 @@
   margin: 2px;
   border-radius: 5px;
   transition: 0.3s all;
+  color: #eeeeee;
 }
 #blogsGrid h2{
   padding: 20px 10px 0 10px;
@@ -165,4 +157,79 @@
 
 #blogsGrid > a:hover{
   background:rgb(16, 16, 16);
+}
+#contact{
+  overflow: hidden;
+}
+#contactMap{
+  display: block;
+  width: 60%;
+  float: left;
+}
+#contactDetails{
+  display: block;
+  width: calc(40% - 10px);
+  float: left;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 0 10px;
+  color: #000;
+}
+
+#contactDetails > a{
+  font-size: 16px;
+  display: flex;
+  padding: 25px;
+  text-align: left;
+  cursor: pointer;
+}
+
+#contactDetails > a span:first-child{
+  width: 20%;
+}
+
+#contactDetails > a:hover{
+  background-color: #eeeeee;
+}
+
+#contactDetails .socials{
+  display: flex;
+  flex-direction: row;
+}
+#contactDetails .socials a{
+  width: calc(100% / 4);
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#contactDetails .socials a:hover{
+  opacity: 0.8;
+}
+#contactDetails .socials a img{
+  width: 32px;
+  height: 32px;
+}
+
+
+#contactDetails .socials a.facebook{
+  background-color: #1877f2;
+}
+#contactDetails .socials a.instagram{
+  background-color: #e1306c;
+}
+#contactDetails .socials a.linkedin{
+  background-color: #007ab9;
+}
+#contactDetails .socials a.github{
+  background-color: #000;
+}
+
+@media only screen and (max-width: 600px){
+  #contactMap, #contactDetails{
+    width: 100%;
+  }
+  #contactDetails{
+    margin: 10px 0 0 0;
+  }
 }

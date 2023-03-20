@@ -1,179 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="manifest" href="manifest.json" />
 
-<head>
-  <meta charset="UTF-8">
-  <link rel="manifest" href="manifest.json">
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Databased" />
+    <meta name="apple-mobile-web-app-title" content="Databased" />
+    <meta name="theme-color" content="#101010" />
+    <meta name="msapplication-navbutton-color" content="#101010" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="msapplication-starturl" content="/" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="application-name" content="Databased">
-  <meta name="apple-mobile-web-app-title" content="Databased">
-  <meta name="theme-color" content="#101010">
-  <meta name="msapplication-navbutton-color" content="#101010">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="msapplication-starturl" content="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="img/icon-192x192.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      sizes="192x192"
+      href="img/icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="256x256"
+      href="img/icon-256x256.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      sizes="256x256"
+      href="img/icon-256x256.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="384x384"
+      href="img/icon-384x384.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      sizes="384x384"
+      href="img/icon-384x384.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="img/icon-512x512.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      sizes="512x512"
+      href="img/icon-512x512.png"
+    />
 
-  <link rel="icon" type="image/png" sizes="192x192" href="img/icon-192x192.png">
-  <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="img/icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="256x256" href="img/icon-256x256.png">
-  <link rel="apple-touch-icon" type="image/png" sizes="256x256" href="img/icon-256x256.png">
-  <link rel="icon" type="image/png" sizes="384x384" href="img/icon-384x384.png">
-  <link rel="apple-touch-icon" type="image/png" sizes="384x384" href="img/icon-384x384.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="img/icon-512x512.png">
-  <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="img/icon-512x512.png">
+    <title>Databased | IISc's Undergraduate CS Club</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="icon" href="./img/favicon-32x32.png" type="image/x-icon" />
+  </head>
 
-  <title>Databased | IISc's Undergraduate CS Club</title>
-  <link rel="stylesheet" href="css/common.css">
-  <link rel="stylesheet" href="css/index.css">
-  <link rel="icon" href="./img/favicon-32x32.png" type="image/x-icon">
-</head>
+  <body>
+    <div id="loader"></div>
+    <header>
+      <nav>
+        <div class="nav-box">
+          <a href="#" class="headerLogo">
+            <img src="img/Logo_transparent.png" />
+          </a>
 
-<body>
-  <header>
-    <nav>
+          <a href="#about" class="nav-list-link">About</a>
+          <a href="/learn" class="nav-list-link">Learn</a>
+          <a href="#events" class="nav-list-link">Events</a>
+          <a href="#blogs" class="nav-list-link">Blog</a>
+          <a href="#contact" class="nav-list-link">Contact</a>
 
+          <a id="nav-hamburger" data-state="inactive">
+            <span></span><span></span><span></span>
+            <p>&times;</p>
+          </a>
+        </div>
+      </nav>
 
-      <div class="nav-box">
-
-        <a href="#" class="headerLogo">
-          <img src="img/Logo_transparent.png">
-        </a>
-
-        <a href="#about" class="nav-list-link">About</a>
-        <a href="#events" class="nav-list-link">Events</a>
-        <a href="#blogs" class="nav-list-link">Blog</a>
-
-        <a id="nav-hamburger" data-state="inactive">
-          <span></span><span></span><span></span>
-          <p>&times;</p>
-        </a>
-
+      <div id="mobileMenu">
+        <a href="#about">About</a>
+        <a href="/learn">Learn</a>
+        <a href="#events">Events</a>
+        <a href="#blogs">Blog</a>
+        <a href="#contact">Contact</a>
       </div>
-    </nav>
+    </header>
 
-    <div id="mobileMenu">
-      <a href="#about">About</a>
-      <a href="#events">Events</a>
-      <a href="#blogs">Blog</a>
+    <div id="title">
+      <img src="img/text.png" />
     </div>
-
-  </header>
-
-  <div id="title">
-
-    <img src="img/text.png">
-
-  </div>
-  <main>
-
-
-    <div id="about">
-
-      <div class="about-content">
-        <div class="title">
-          About
+    <main>
+      <div id="about">
+        <div class="about-content">
+          <div class="title">About</div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec
+            purus gravida, tempus ipsum non, finibus turpis. In sed volutpat
+            tortor. Curabitur nec nisl at justo bibendum commodo. Nulla gravida
+            in ex sed condimentum. Duis ut neque orci. Donec luctus dui eget
+            dolor consectetur, eu rutrum orci fermentum. Nullam sit amet
+            vestibulum elit.
+          </p>
+          <br />
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec
+            purus gravida, tempus ipsum non, finibus turpis. In sed volutpat
+            tortor. Curabitur nec nisl at justo bibendum commodo. Nulla gravida
+            in ex sed condimentum. Duis ut neque orci. Donec luctus dui eget
+            dolor consectetur, eu rutrum orci fermentum. Nullam sit amet
+            vestibulum elit.
+          </p>
         </div>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec purus gravida, tempus ipsum non, finibus
-          turpis. In sed volutpat tortor. Curabitur nec nisl at justo bibendum commodo. Nulla gravida in ex sed
-          condimentum. Duis ut neque orci. Donec luctus dui eget dolor consectetur, eu rutrum orci fermentum. Nullam sit
-          amet vestibulum elit.
-        </p>
-        <br>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec purus gravida, tempus ipsum non, finibus
-          turpis. In sed volutpat tortor. Curabitur nec nisl at justo bibendum commodo. Nulla gravida in ex sed
-          condimentum. Duis ut neque orci. Donec luctus dui eget dolor consectetur, eu rutrum orci fermentum. Nullam sit
-          amet vestibulum elit.</p>
-      </div>
-      <img src="img/IISc Linesketch.png">
-    </div>
-
-    <div id="events">
-
-
-      <div class="title">
-        Events
+        <img src="img/IISc Linesketch.png" />
       </div>
 
-      <div id="eventsGrid">
-        <div>
-          <h2>Event 1</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec purus gravida</p>
-          <button>Learn More</button>
-        </div>
-        <div>
-          <h2>Event 2</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec purus gravida</p>
-          <button>Learn More</button>
-        </div>
-        <div>
-          <h2>Event 3</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec purus gravida</p>
-          <button>Learn More</button>
-        </div>
-        <div>
-          <h2>Event 4</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec purus gravida</p>
-          <button>Learn More</button>
-        </div>
-        <div>
-          <h2>Event 5</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec purus gravida</p>
-          <button>Learn More</button>
-        </div>
-        <div>
-          <h2>Event 6</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec purus gravida</p>
-          <button>Learn More</button>
+      <div id="events">
+        <div class="title">Events</div>
+
+        <div id="eventsGrid">
+          <div>
+            <h2>Event 1</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec
+              purus gravida
+            </p>
+            <button>Learn More</button>
+          </div>
+          <div>
+            <h2>Event 2</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec
+              purus gravida
+            </p>
+            <button>Learn More</button>
+          </div>
+          <div>
+            <h2>Event 3</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec
+              purus gravida
+            </p>
+            <button>Learn More</button>
+          </div>
+          <div>
+            <h2>Event 4</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec
+              purus gravida
+            </p>
+            <button>Learn More</button>
+          </div>
+          <div>
+            <h2>Event 5</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec
+              purus gravida
+            </p>
+            <button>Learn More</button>
+          </div>
+          <div>
+            <h2>Event 6</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec
+              purus gravida
+            </p>
+            <button>Learn More</button>
+          </div>
         </div>
       </div>
 
-    </div>
+      <div id="blogs">
+        <div class="title">Blogs</div>
 
-
-    <div id="blogs">
-
-
-      <div class="title">
-        Blogs
+        <div id="blogsGrid">
+          <a href="#">
+            <div
+              class="img-container"
+              style="background-image: url(img/backgroundsbundle/Doubs.png)"
+            ></div>
+            <h2>Great Blog</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+          </a>
+          <a href="#">
+            <div
+              class="img-container"
+              style="background-image: url(img/backgroundsbundle/Doubs.png)"
+            ></div>
+            <h2>Great Blog</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+          </a>
+          <a href="#">
+            <div
+              class="img-container"
+              style="background-image: url(img/backgroundsbundle/Doubs.png)"
+            ></div>
+            <h2>Great Blog</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+          </a>
+          <a href="#">
+            <div
+              class="img-container"
+              style="background-image: url(img/backgroundsbundle/Doubs.png)"
+            ></div>
+            <h2>Great Blog</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+          </a>
+        </div>
       </div>
-      
-      <div id="blogsGrid">
-        <a href="#">
-          <div class="img-container" style="background-image: url(img/backgroundsbundle/Doubs.png);"></div>
-          <h2>Great Blog</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
-        </a>
-        <a href="#">
-          <div class="img-container" style="background-image: url(img/backgroundsbundle/Doubs.png);"></div>
-          <h2>Great Blog</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
-        </a>
-        <a href="#">
-          <div class="img-container" style="background-image: url(img/backgroundsbundle/Doubs.png);"></div>
-          <h2>Great Blog</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
-        </a>
-        <a href="#">
-          <div class="img-container" style="background-image: url(img/backgroundsbundle/Doubs.png);"></div>
-          <h2>Great Blog</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
-        </a>
+
+      <div id="contact">
+        <div class="title">Contact</div>
+
+        <iframe
+          id="contactMap"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15549.279425908911!2d77.56144658387726!3d13.01529185395299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17d3b5a43863%3A0xe4240a4d6bc7a0da!2sDepartment%20Of%20Computer%20Science%20And%20Automation!5e0!3m2!1sen!2sin!4v1679229205647!5m2!1sen!2sin"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <div id="contactDetails">
+          <a class="email">
+            <span class="material-symbols-outlined"> mail </span>
+            <span>email@databased</span>
+          </a>
+          <a class="phone">
+            <span class="material-symbols-outlined"> call </span>
+            <span>+91 1234567890</span>
+          </a>
+          <div class="socials">
+            <a href="#" class="facebook"><img src="img/social/facebook.png" /></a>
+            <a href="#" class="instagram"><img src="img/social/instagram.png" /></a>
+            <a href="#" class="linkedin"><img src="img/social/linkedin.png" /></a>
+            <a href="#" class="github"><img src="img/social/github.png"></a>
+          </div>
+        </div>
       </div>
+    </main>
 
-
-    </div>
+    <footer>
+      <img src="img/Logo_transparent.png" />
+    </footer>
+    <script src="js/common.js"></script>
     <script src="js/index.js"></script>
-  </main>
-  
-  <footer>
-    <img src="img/Logo_transparent.png">
-  </footer>
-  <!-- <script src="js/common.js"></script> -->
-  
-</body>
-
+  </body>
 </html>
