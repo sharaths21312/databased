@@ -70,19 +70,10 @@ fetch(
         cards.push(card);
         // document.getElementById("container").appendChild(card);
     });
-})
-.then(() => {
-    layCards(cards);
+});
+// window.addEventListener('resize', function(event) {
+//     document.querySelectorAll(".card").forEach(function(card){
+//         card.style.top = card.nth-child.max_height + "px";
+//     });
+// }, true);
 
-document.querySelector("#loader").classList.add("fadeout");
-        setTimeout(() => {
-            document.querySelector("#loader").style.display = "none";
-            document.querySelector("#loader").classList.remove("fadeout");
-        }, 300);
-    });
-    
-window.addEventListener('resize', function(event) {
-    layCards(cards);
-}, true);
-
-// function filter_topic()
