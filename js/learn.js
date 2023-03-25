@@ -1,46 +1,59 @@
-var difficulty_filter = ['hard', 'medium', 'easy'];
-var topic_filter = {Arrays, Strings}
+var difficulty_filter = new Set(['Hard', 'Medium', 'Easy']);
+var topic_filter = new Set();
 
-function layCards(cards) {
+function layCards(cards, topic_filter, difficulty_filter) {
     document.getElementById("container").innerHTML = "";
     let card_containers = [];
     let heights = [];
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 4; i++) {
         const card_container = document.createElement("div");
         card_container.className = "card_container";
         // card_container.id = "container" + i;
         card_containers.push(card_container);
         heights.push(0);
     }
-    // get width of the window, not the entire screen
-    let NUM_CONTAINERS = Math.min(Math.floor(window.innerWidth / 300), 5);
+
+    let NUM_CONTAINERS = Math.max(Math.floor(document.querySelector("main").getBoundingClientRect().width / 300), 1);
     for (let i = 0; i < NUM_CONTAINERS; i++) {
         document.getElementById("container").appendChild(card_containers[i]);
     }
-    cards.forEach(function(card){
+    cards.forEach(function (card) {
+        let difficulty = card.getElementsByClassName("difficultyTag")[0].innerText;
+        if (!difficulty_filter.has(difficulty)) {
+            // console.log(card.getElementsByClassName("difficultyTag")[0], card, difficulty_filter, difficulty);
+            return;
+        };
+    
+   
+        let topicTagList = card.getElementsByClassName("topicTag");
+        let card_topics = [...topicTagList].map(function (tag) {
+            return tag.innerText;
+        });
+    
+   
+        // first topicTag is parent of all others for some reason.
+        // starting from second element
+        let common_topics = card_topics.filter(x => topic_filter.has(x));
+        if (common_topics.length == 0) {
+            // console.log("HOO", common_topics, card_topics, topic_filter);
+            return;
+        };
+        
+        
+        // console.log(topicString);
         const min_height = Math.min(...heights.slice(0, NUM_CONTAINERS));
         const min_height_index = heights.indexOf(min_height);
+        // console.log(card_containers, min_height, min_height_index, heights, NUM_CONTAINERS);
         card_containers[min_height_index].appendChild(card);
         heights[min_height_index] += card.clientHeight;
+    
     });
-}
+};
 
-document.querySelectorAll(".filter button").forEach(function (btn) {
-    btn.addEventListener("click", function (event) {
-        let type = this.parentElement.getAttribute('data-type');
 
-        if (this.classList.contains("active")) {
-            this.classList.remove("active");
-            window[type + "_filter"].splice(window[type + "_filter"].indexOf(this.getAttribute('data')), 1)
-            
-        } else {
-            this.classList.add("active");
-            window[type + "_filter"].push(this.getAttribute('data'));
-        }
-    });
-});
 
 var cards = [];
+
 fetch(
     `https://api.airtable.com/v0/appHwUzo4ARCQQlwr/Learn?maxRecords=1000&view=Grid%20view`,
     {
@@ -55,25 +68,55 @@ fetch(
     return response.json();
 })
 .then(response => {
-    response.records.forEach(function(row){
-        let topicsString = "";
-        row.fields.Topics.forEach(function(topic){
-            topicsString += `<span class="topicTag">${topic}</span>`;
-        });
+        response.records.forEach(function (row) {
+            let topicsString = "";
+            row.fields.Topics.forEach(function (topic) {
+                if (topic != "") {
+                    topicsString += `<span class="topicTag">${topic}</span>`;
+                    topic_filter.add(topic);
+                }
+            });
 
-        const card = document.createElement("div");
-        card.className = "card";
-        card.innerHTML += `<h2>${row.fields.Name}</h2>`;
-        card.innerHTML += `<span class="difficultyTag ${row.fields.Difficulty}">${row.fields.Difficulty}</span>`;
-        card.innerHTML += `<span class="topicTag">${topicsString}</span>`;
-        card.innerHTML += `<a href="${row.fields.Link}" target="_blank">Open Problem</a>`;
-        cards.push(card);
-        // document.getElementById("container").appendChild(card);
+            const card = document.createElement("div");
+            card.className = "card";
+            card.innerHTML += `<h2>${row.fields.Name}</h2>`;
+            card.innerHTML += `<span id="difficulty" class="difficultyTag ${row.fields.Difficulty}">${row.fields.Difficulty}</span>`;
+            card.innerHTML += `<span class="topicTag">${topicsString}</span>`;
+            card.innerHTML += `<a href="${row.fields.Link}" target="_blank">Open Problem</a>`;
+            cards.push(card);
+            // _filter.add(this);
+            // document.getElementById("container").appendChild(card);
+        });
+        layCards(cards, topic_filter, difficulty_filter);
+
+        topic_filter.forEach(function (topic) {
+            document.querySelector(
+                ".filter[data-type=topic]"
+            ).innerHTML += `<button class="active" data="${topic}">${topic}</button>`;
+        });
+        document.querySelectorAll(".filter button").forEach(function (btn) {
+            btn.addEventListener("click", function (event) {
+                let data_type = this.parentElement.getAttribute('data-type');
+
+                if (this.classList.contains("active")) {
+                    this.classList.remove("active");
+                    //what is window?
+                    window[data_type + "_filter"].delete(this.getAttribute('data'));
+                } else {
+                    this.classList.add("active");
+                    window[data_type + "_filter"].add(this.getAttribute('data'));
+                }
+                window.addEventListener("click", function(btn){
+                    layCards(cards, topic_filter, difficulty_filter);
+            });
+             
+             });
+            
+
     });
 });
-// window.addEventListener('resize', function(event) {
-//     document.querySelectorAll(".card").forEach(function(card){
-//         card.style.top = card.nth-child.max_height + "px";
-//     });
-// }, true);
-
+window.addEventListener('resize', function (event) {
+    layCards(cards, topic_filter, difficulty_filter);
+}, true);
+    
+    
