@@ -1,46 +1,46 @@
-#title {
-  background-image: url(../img/backgroundsbundle/Whangaehu.png);
-  text-align: center;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+#title{
+    background-image: url(../img/backgroundsbundle/Whangaehu.png);
+    text-align: center;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
-#title h1 {
-  font-size: 25vw;
-  line-height: 100vh;
-}
-
-main {
-  margin: 50px auto;
+#title h1{
+    font-size: 25vw;
+    line-height: 100vh;
 }
 
-.filter {
-  margin: 20px 0;
+main{
+    margin: 50px auto;
 }
 
-.filter h3 {
-  margin-bottom: 5px;
+.filter{
+ margin: 20px 0;   
+
 }
 
-.filter button {
-  background-color: transparent;
-  color: #fff;
-  font-size: 16px;
-  padding: 5px 15px;
-  border-radius: 10px;
-  border: 1px solid #fff;
-  cursor: pointer;
-  transition: 0.3s background-color, 0.3s color;
-  margin: 0 5px;
+.filter h3{
+    margin-bottom: 5px;
 }
-.filter button:first-child {
-  margin-left: 0;
+
+.filter button{
+    background-color: transparent;
+    font-size: 16px;
+    padding: 5px 15px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    cursor: pointer;
+    transition: 0.3s background-color, 0.3s color;
+    margin: 0 5px;
+}
+.filter button:first-child{
+    margin-left: 0;
 }
 /* .filter button:hover, */
-.filter button.active {
-  background-color: #fff;
-  color: rgb(6, 6, 61);
+ .filter button.active{
+    background-color: #fff;
+    color: rgb(6, 6, 61);
 }
 .container {
   overflow: hidden;
@@ -57,73 +57,82 @@ main {
   display: none; /* Hidden by default */
 }
 .show {
-  display: block;
-}
-
+    display: block;
+  }
 #container {
-  overflow: hidden;
-  display: grid;
-  /* gap: 10px;   */
-  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
-  grid-template-rows: 1px;
+    display: flex;
+    width: 100%;
 }
-.card {
-  display: block;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.8);
-  height: fit-content;
+.card_container{
+    /* position: absolute; */
+    /* justify-content: center; */
+    min-width: 300px;
+    padding: 0px 5px;
+}
+.card{
+    max-width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    margin: 5px auto;
+    border-radius: 10px;
 }
 
-.card h2 {
-  color: rgb(6, 6, 61);
-  padding: 10px;
+
+/* @media only screen and (max-width: 700px){
+    .card{
+        display: block;
+        width: calc(100% / 2 - 4px);
+        min-width: min-content;
+        margin-left: 0!important;
+        margin-right: 0!important;
+    }
+} */
+.card h2{
+    color:rgb(6, 6, 61);
 }
-.card .tags{
-    padding: 0 10px;
+.card .difficultyTag{
+    color: white;
+    padding: 5px 10px;
+    margin: 10px 5px 5px 0;
+    display: inline-block;
+    width: fit-content;
+    border-radius: 10px;
 }
-.card .difficultyTag {
-  color: white;
-  padding: 5px 10px;
-  margin: 10px 5px 5px 0;
-  display: inline-block;
-  width: fit-content;
-  border-radius: 10px;
+.card .difficultyTag.Easy{
+    background-color: #2f7a2f;
 }
-.card .difficultyTag.Easy {
-  background-color: #2f7a2f;
+.card .difficultyTag.Medium{
+    background-color: #f7b500;
 }
-.card .difficultyTag.Medium {
-  background-color: #f7b500;
+.card .difficultyTag.Hard{
+    background-color: #f70000;
 }
-.card .difficultyTag.Hard {
-  background-color: #f70000;
+.card .topicTag {
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    margin: 5px 5px;
+    display: inline-block;
+    width: fit-content;
+    border-radius: 10px;
+    margin-left: 0;
 }
-.card .topicTag span {
-  background-color: black;
-  color: white;
-  padding: 5px 10px;
-  margin: 5px 5px;
-  display: inline-block;
-  width: fit-content;
-  border-radius: 10px;
+/* .card .topicTag span:first-child{
+    margin-left: 0;
+} */
+.card a{
+    display: block;
+    text-align: center;
+    margin: 5px 0 0 0;
+    padding: 10px 20px;
+    background-color: rgb(6, 6, 61);
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s background-color, 0.3s color;
+
 }
-.card .topicTag span:first-child {
-  margin-left: 0;
-}
-.card a {
-  display: block;
-  text-align: center;
-  margin: 5px 0 0 0;
-  padding: 10px 20px;
-  background-color: rgb(6, 6, 61);
-  color: white;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: 0.3s all;
-}
-.card a:hover {
-  background-color: white;
-  color: rgb(6, 6, 61);
-  letter-spacing: 1px;
-  font-weight: 600;
+.card a:hover{
+    background-color: white;
+    color: rgb(6, 6, 61);
 }
