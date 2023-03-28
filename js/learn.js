@@ -27,7 +27,7 @@ function layCards(cards, topic_filter, difficulty_filter) {
    
         let topicTagList = card.getElementsByClassName("topicTag");
         let card_topics = [...topicTagList].map(function (tag) {
-            return tag.innerText;
+            return tag.getAttribute("topic");
         });
     
    
@@ -72,7 +72,7 @@ fetch(
             let topicsString = "";
             row.fields.Topics.forEach(function (topic) {
                 if (topic != "") {
-                    topicsString += `<span class="topicTag">${topic}</span>`;
+                    topicsString += `<span class="topicTag" topic="${topic}">${topic}</span>`;
                     topic_filter.add(topic);
                 }
             });
