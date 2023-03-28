@@ -81,7 +81,8 @@ fetch(
             card.className = "card";
             card.innerHTML += `<h2>${row.fields.Name}</h2>`;
             card.innerHTML += `<span id="difficulty" class="difficultyTag ${row.fields.Difficulty}">${row.fields.Difficulty}</span>`;
-            card.innerHTML += `<span class="topicTag">${topicsString}</span>`;
+            card.innerHTML += topicsString;
+            // card.innerHTML += `<span class="topicTag">${topicsString}</span>`;
             card.innerHTML += `<a href="${row.fields.Link}" target="_blank">Open Problem</a>`;
             cards.push(card);
             // _filter.add(this);
