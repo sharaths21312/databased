@@ -8,7 +8,6 @@ function layCards(cards, topic_filter, difficulty_filter) {
     for (let i = 0; i < 4; i++) {
         const card_container = document.createElement("div");
         card_container.className = "card_container";
-        // card_container.id = "container" + i;
         card_containers.push(card_container);
         heights.push(0);
     }
@@ -18,42 +17,29 @@ function layCards(cards, topic_filter, difficulty_filter) {
         document.getElementById("container").appendChild(card_containers[i]);
     }
     cards.forEach(function (card) {
-        let difficulty = card.getElementsByClassName("difficultyTag")[0].innerText;
+        let difficulty = card.getElementsByClassName("difficultyTag")[0].getAttribute("difficulty");
         if (!difficulty_filter.has(difficulty)) {
-            // console.log(card.getElementsByClassName("difficultyTag")[0], card, difficulty_filter, difficulty);
             return;
         };
-    
    
         let topicTagList = card.getElementsByClassName("topicTag");
         let card_topics = [...topicTagList].map(function (tag) {
             return tag.getAttribute("topic");
         });
     
-   
-        // first topicTag is parent of all others for some reason.
-        // starting from second element
         let common_topics = card_topics.filter(x => topic_filter.has(x));
         if (common_topics.length == 0) {
-            // console.log("HOO", common_topics, card_topics, topic_filter);
             return;
         };
         
-        
-        // console.log(topicString);
         const min_height = Math.min(...heights.slice(0, NUM_CONTAINERS));
         const min_height_index = heights.indexOf(min_height);
-        // console.log(card_containers, min_height, min_height_index, heights, NUM_CONTAINERS);
         card_containers[min_height_index].appendChild(card);
         heights[min_height_index] += card.clientHeight;
-    
     });
 };
 
-
-
 var cards = [];
-
 fetch(
     `https://api.airtable.com/v0/appHwUzo4ARCQQlwr/Learn?maxRecords=1000&view=Grid%20view`,
     {
@@ -80,13 +66,10 @@ fetch(
             const card = document.createElement("div");
             card.className = "card";
             card.innerHTML += `<h2>${row.fields.Name}</h2>`;
-            card.innerHTML += `<span id="difficulty" class="difficultyTag ${row.fields.Difficulty}">${row.fields.Difficulty}</span>`;
+            card.innerHTML += `<span id="difficulty" class="difficultyTag ${row.fields.Difficulty}" difficulty="${row.fields.Difficulty}">${row.fields.Difficulty}</span>`;
             card.innerHTML += topicsString;
-            // card.innerHTML += `<span class="topicTag">${topicsString}</span>`;
             card.innerHTML += `<a href="${row.fields.Link}" target="_blank">Open Problem</a>`;
             cards.push(card);
-            // _filter.add(this);
-            // document.getElementById("container").appendChild(card);
         });
         layCards(cards, topic_filter, difficulty_filter);
 
@@ -101,7 +84,6 @@ fetch(
 
                 if (this.classList.contains("active")) {
                     this.classList.remove("active");
-                    //what is window?
                     window[data_type + "_filter"].delete(this.getAttribute('data'));
                 } else {
                     this.classList.add("active");
@@ -112,12 +94,8 @@ fetch(
             });
              
              });
-            
-
     });
 });
 window.addEventListener('resize', function (event) {
     layCards(cards, topic_filter, difficulty_filter);
 }, true);
-    
-    
