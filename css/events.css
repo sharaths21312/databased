@@ -1,12 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Ubuntu");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
-
 * {
   margin: 0;
   padding: 0;
   color: #eeeeee;
-  box-sizing: border-box;
 }
 
 html {
@@ -20,17 +17,8 @@ body {
     #26032c calc(100vh + 0px),
     rgb(16, 16, 16) 100vh
   );
-  color: #eeeeee;
 }
-#loader{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #fff;
-  z-index: 99999;
-}
+
 header {
   position: fixed;
   top: 0;
@@ -87,16 +75,6 @@ nav {
   height: 5px;
   background-color: white;
   margin: 5px 0;
-}
-
-
-@media only screen and (max-width: 900px) {
-  .nav-list-link {
-    display: none;
-  }
-  #nav-hamburger{
-    display: inline-block;
-  }
 }
 
 #mobileMenu{
@@ -170,13 +148,4 @@ footer{
 footer img{
   max-width: 90%;
   width: 150px;
-}
-
-@media only screen and (max-width: 550px) {
-  .nav-list-link {
-    display: none;
-  }
-  #nav-hamburger{
-    display: inline-block;
-  }
 }
