@@ -320,6 +320,15 @@
 }
 #blogsGrid h2{
   padding: 20px 10px 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media screen and (max-width: 600px){
+  #blogsGrid > a{
+    width: 100%;
+    margin: 2px 0;
+  }
 }
 
 #blogsGrid .img-container{

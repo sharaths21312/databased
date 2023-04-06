@@ -91,7 +91,7 @@ fetch(
           row.fields.Description;
       });
     });
-    unload();
+    tryUnload();
   });
 
 function eventsModalImage(e) {
@@ -129,11 +129,21 @@ function loadBlogs({ feed }) {
     }
     var authorImg = entry.author[0].gd$image.src;
     if(authorImg.indexOf("http") == -1) authorImg = "http://" + authorImg;
+
+    if(entry.media$thumbnail){
+      var thumbSrc = entry.media$thumbnail.url;
+      console.log(thumbSrc);
+      thumbSrc = thumbSrc.split("/s72-")[0] + "/s600-c/" + thumbSrc.split("/s72-")[1].split('/')[1];
+    }
+    else{
+      var thumbSrc = "img/Backgrounds/Doubs.png";
+    }
+
     document.querySelector("#blogsGrid").innerHTML += `
     <a href="${entry.link[0].href}">
       <div
         class="img-container"
-        style="background-image: url(img/backgroundsbundle/Doubs.png)"
+        style="background-image: url(${thumbSrc})"
       ></div>
       <h2>${entry.title.$t}</h2>
       <p class="blogCategories">${categoryTags}</p>
@@ -141,4 +151,15 @@ function loadBlogs({ feed }) {
     </a>`;
     i += 1;
   });
+
+  tryUnload();
+}
+
+
+var UNLOAD_TRIAL = 0;
+function tryUnload() {
+  UNLOAD_TRIAL += 1;
+  if (UNLOAD_TRIAL == 2) {
+    unload();
+  }
 }
