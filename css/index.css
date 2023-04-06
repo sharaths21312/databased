@@ -46,7 +46,7 @@
 .about-content {
   width: calc(50% - 20px);
   padding: 10px;
-  text-align: center;
+  text-align: justify;
   margin-bottom: 25px;
 }
 @media only screen and (max-width: 800px) {
@@ -63,71 +63,240 @@
   }
 }
 
+#eventsGrid{
+  overflow: hidden;
+}
+
 #eventsGrid > div {
   float: left;
-  padding: 10px 10px 100px 10px;
-  width: calc(100% / 3 - 4px);
+  width: calc(100% / 2 - 4px);
   box-sizing: border-box;
-  border: 1px solid grey;
   margin: 2px;
   border-radius: 5px;
   text-align: left;
   position: relative;
   transition: 0.3s all;
-  overflow: hidden;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  cursor: pointer;
 }
-#eventsGrid div::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  bottom: 0;
-  left: 0;
+#eventsGrid *{
+  color: #000;
+}
+.eventCardImg{
+  width: 20%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px 0 0 5px;
+}
+.eventCardContent{
+  padding: 20px;
+  width: 80%;
+}
+.eventCardDate{
+  color: rgb(214, 70, 17)!important;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.eventCardTitle{
+  margin: 5px 0 20px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.eventCardType{
+  background-color: rgb(214, 70, 17);
+  color: #fff!important;
+  padding: 5px 10px;
+  text-transform: uppercase;
   border-radius: 5px;
-  z-index: -1;
-  background: linear-gradient(45deg, #e91e63, #f44336, #ff5722, #ff9800);
-  opacity: 0;
-  transition: 0.3s all;
 }
 
-#eventsGrid button {
-  background-color: transparent;
-  outline: none;
-  border: 0;
-  border-radius: 5px;
-  padding: 5px 10px;
-  background-color: white;
-  color: black;
-  font-weight: 600;
-  font-family: "Montserrat", sans-serif;
+@media only screen and (max-width: 900px) {
+  #eventsGrid > div {
+    width: 100%;
+    margin: 2px 0;
+  }
+}
+
+#viewAllEvents{
+  clear: both;
+  display: block;
+  margin: auto;
+  background-color: #fff;
+  color: rgb(4, 4, 108);
+  padding: 10px;
   text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 25px;
+  width: 200px;
+  text-align: center;
+  transition: 0.3s all;
+}
+#viewAllEvents span{
+  color: rgb(4, 4, 108);
+  vertical-align: bottom;
+  font-size: 18px;
+  font-weight: 600;
+}
+#viewAllEvents:hover{
+  background: #000;
+  color: #fff;
+  letter-spacing: 1px;
+}
+#viewAllEvents:hover span{
+  color: #fff;
+}
+
+#eventModal{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  padding-top: 50px;
+  animation: fadein 0.3s ease-in-out forwards;
+}
+#closeEventModal{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  border: 0;
+  cursor: pointer;
+}
+#eventModal .modalContent{
+  width: 90%;
+  max-width: 600px;
+  margin: auto;
+  max-height: calc(100vh - 100px);
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: auto;
+  animation: growin 0.3s ease-in-out forwards;
+}
+@keyframes growin{
+  0%{
+    transform: scale(0.5);
+    translate: 0 500px;
+  }
+  100%{
+    transform: scale(1);
+    translate: 0 0;
+  }
+}
+#eventModal .modalDescription{
+  white-space: pre-line;
+}
+#eventModal .modalImg{
+  border-radius: 20px 20px 0 0;
+  padding-top: 60%;
+  background-size: contain;
+  background-position: center;
+  position: relative;
+}
+#eventModal .modalImg img{
+  display: none;
+  width: 100%;
+}
+#eventModal .imagesButtons{
+  background-color: rgba(0, 0, 0, 0.8);
   position: absolute;
   bottom: 10px;
-  left: 10px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 20px;
+}
+#eventModal .imagesButtons button{
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 100%;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 2px;
   cursor: pointer;
   transition: 0.3s all;
 }
-#eventsGrid > div:hover {
-  background-size: 100% 100%;
-  cursor: pointer;
-  z-index: 1;
-  border-color: transparent;
+#eventModal .imagesButtons button.active{
+  background-color: #fff;
+  width: 15px;
+  height: 15px;
 }
-#eventsGrid > div:hover::before {
-  opacity: 1;
+#eventModal .modalDetails{
+  padding: 20px;
 }
-
-#eventsGrid > div:hover button {
-  background-color: black;
-  color: white;
-  font-size: 1.1em;
-  letter-spacing: 1.1px;
+#eventModal .modalDetails *{
+  color: #000;
 }
-
-@media only screen and (max-width: 650px) {
-  #eventsGrid > div {
-    width: calc(100% / 2 - 4px);
-  }
+#eventModal .modalHeading{
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+#eventModal .modalDate, 
+#eventModal .modalPlace{
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  margin: 10px 0;
+}
+#eventModal .modalDate span, 
+#eventModal .modalPlace span{
+  vertical-align: bottom;
+  font-size: 40px;
+  margin-right: 15px;
+}
+#eventModal .modalDate,
+#eventModal .modalDate span{
+  color: #3F51B5;
+}
+#eventModal .modalPlace,
+#eventModal .modalPlace span{
+  color: #009688;
+}
+#eventModal .modalChips{
+  text-align: center;
+  margin: 10px 0;
+  font-size: 0.8em;
+}
+#eventModal .modalType,
+#eventModal .modalAudience{
+  color: #fff!important;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  display: inline-block;
+}
+#eventModal .modalType{
+  background-color: rgb(214, 70, 17);;
+}
+#eventModal .modalAudience{
+  background-color: #E91E63;
+}
+#eventModal .modalTopic{
+  border: 1px solid #333;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  border-radius: 20px;
+  display: inline-block;
+  margin: 0 2px;
 }
 
 #blogsGrid > a{
@@ -182,6 +351,11 @@
   padding: 25px;
   text-align: left;
   cursor: pointer;
+  text-decoration: none;
+}
+
+#contactDetails > a span{
+  color: #000;
 }
 
 #contactDetails > a span:first-child{

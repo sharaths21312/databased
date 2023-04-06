@@ -114,12 +114,12 @@
         <div class="about-content">
           <div class="title">About</div>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec
-            purus gravida, tempus ipsum non, finibus turpis. In sed volutpat
-            tortor. Curabitur nec nisl at justo bibendum commodo. Nulla gravida
-            in ex sed condimentum. Duis ut neque orci. Donec luctus dui eget
-            dolor consectetur, eu rutrum orci fermentum. Nullam sit amet
-            vestibulum elit.
+            Welcome to Databased, the CS Crew at the Indian Institute of Science
+            (IISc), where curiosity and innovation come together to create
+            something extraordinary! We're a community of students passionate
+            about diving deep into the world of computer science and related
+            fields. We're here to provide a comprehensive resource for beginners
+            to learn, grow, and create.
           </p>
           <br />
           <p>
@@ -136,57 +136,11 @@
 
       <div id="events">
         <div class="title">Events</div>
-
-        <div id="eventsGrid">
-          <div>
-            <h2>Event 1</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec
-              purus gravida
-            </p>
-            <button>Learn More</button>
-          </div>
-          <div>
-            <h2>Event 2</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec
-              purus gravida
-            </p>
-            <button>Learn More</button>
-          </div>
-          <div>
-            <h2>Event 3</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec
-              purus gravida
-            </p>
-            <button>Learn More</button>
-          </div>
-          <div>
-            <h2>Event 4</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec
-              purus gravida
-            </p>
-            <button>Learn More</button>
-          </div>
-          <div>
-            <h2>Event 5</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec
-              purus gravida
-            </p>
-            <button>Learn More</button>
-          </div>
-          <div>
-            <h2>Event 6</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec
-              purus gravida
-            </p>
-            <button>Learn More</button>
-          </div>
-        </div>
+        <div id="eventsGrid"></div>
+        <a href="/events" id="viewAllEvents">
+          View All Events
+          <span class="material-symbols-outlined"> arrow_forward </span>
+        </a>
       </div>
 
       <div id="blogs">
@@ -242,23 +196,52 @@
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
         <div id="contactDetails">
-          <a class="email">
+          <a class="email" href="mailto:">
             <span class="material-symbols-outlined"> mail </span>
             <span>email@databased</span>
           </a>
-          <a class="phone">
+          <a class="phone" href="tel:">
             <span class="material-symbols-outlined"> call </span>
             <span>+91 1234567890</span>
           </a>
           <div class="socials">
-            <a href="#" class="facebook"><img src="img/social/facebook.png" /></a>
-            <a href="#" class="instagram"><img src="img/social/instagram.png" /></a>
-            <a href="#" class="linkedin"><img src="img/social/linkedin.png" /></a>
-            <a href="#" class="github"><img src="img/social/github.png"></a>
+            <a href="#" class="facebook"
+              ><img src="img/social/facebook.png"
+            /></a>
+            <a href="#" class="instagram"
+              ><img src="img/social/instagram.png"
+            /></a>
+            <a href="#" class="linkedin"
+              ><img src="img/social/linkedin.png"
+            /></a>
+            <a href="#" class="github"><img src="img/social/github.png" /></a>
           </div>
         </div>
       </div>
     </main>
+
+    <div id="eventModal">
+      <div class="modalContent">
+        <div class="modalImg">
+          <button id="closeEventModal">
+            <span class="material-symbols-outlined"> close </span>
+          </button>
+          <div class="imagesContainer"></div>
+          <div class="imagesButtons"></div>
+        </div>
+        <div class="modalDetails">
+          <h1 class="modalHeading"></h1>
+          <div class="modalChips">
+            <span class="modalType"></span>
+            <span class="modalAudience"></span>
+          </div>
+          <div class="modalChips modalTopics"></div>
+          <span class="modalDate"></span>
+          <span class="modalPlace"></span>
+          <p class="modalDescription"></p>
+        </div>
+      </div>
+    </div>
 
     <footer>
       <img src="img/Logo_transparent.png" />

@@ -95,6 +95,7 @@ fetch(
              
              });
     });
+    unload();
 });
 window.addEventListener('resize', function (event) {
     layCards(cards, topic_filter, difficulty_filter);
