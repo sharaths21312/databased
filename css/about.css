@@ -1,0 +1,137 @@
+.person-profile {
+    width: 120px;
+    height: 120px;
+    /* border-radius: 50%; */
+}
+
+#people-list {
+    display: flex;
+    flex-wrap: wrap;
+    /* align-content: center; */
+    justify-content: center;
+}
+
+.person-element {
+    display: flex;
+    margin: 10px;
+    min-width: 150px;
+    min-height: 150px;
+    max-width: fit-content;
+    align-items: center;
+    padding: 20px;
+    color: black;
+    flex-direction: column;
+}
+
+.person-name {
+    padding-top: 10px;
+    align-self: center;
+    justify-self: center;
+}
+
+.person-profile:hover {
+    transform: scale(1.1);
+}
+
+@media only screen and (max-width: 800px) {
+    .about-content {
+        width: calc(100% - 20px);
+    }
+
+    #about img {
+        width: 100%;
+    }
+
+    #about,
+    #events,
+    #blogs {
+        padding: 100px 5px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .nav-list-link {
+        display: none;
+    }
+
+    #nav-hamburger {
+        display: inline-block;
+    }
+}
+
+body {
+    background: linear-gradient(#180834 0,
+            #26032c calc(100vh + 0px),
+            rgb(16, 16, 16));
+}
+
+#about-us {
+    display: grid;
+    margin-inline: 10%;
+    min-height: 100vh;
+    text-align: center;
+    align-items: center;
+    font-size: 3em;
+}
+
+#about-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-block-end: 50px;
+}
+
+#about-img {
+    width: 40vw;
+}
+
+#about-para {
+    max-width: 40%;
+}
+#more-content {
+    padding-inline: 20%;
+    text-align: center;
+    margin-block: 40px;
+}
+
+.profile-link {
+    text-decoration: none;
+}
+
+h2 {
+    font-size: 2em;
+    margin-block: 40px;
+    text-align: center;
+}
+
+#contact-details {
+    display: grid;
+    justify-content: center;
+}
+#email-desc, #address-desc {
+    width: fit-content;
+    align-self: center;
+}
+#email-desc {
+    margin-block-end: 20px;
+}
+
+.desc {
+    color: darkgray;
+}
+
+#contact-details {
+    display: flex;
+    flex-direction: row;
+    margin-inline: 10%;
+}
+
+#contact-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: stretch; */
+    flex: 1;
+    margin-inline: 20px;
+}
