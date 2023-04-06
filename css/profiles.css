@@ -1,0 +1,56 @@
+#error-message {
+    min-height: 100vh;
+    font-size: xx-large;
+    display: grid;
+    text-align: center;
+    align-items: center;
+}
+
+#main-content {
+    display: grid;
+    align-items: center;
+    margin-block: 20px;
+    min-height: 100vh;
+}
+
+#person-details {
+    display: flex;
+    margin-inline: 20%;
+    flex-direction: row;
+    margin-block: 20px;
+}
+
+#profile-photo {
+    width: 150px;
+    height: 150px;
+}
+
+#profile-text {
+    flex: 1;
+    margin-inline: 40px;
+    flex-direction: column;
+    align-self: stretch;
+    display: flex;
+}
+
+body {
+    background-color: rgb(58, 9, 104);
+    background-image: none;
+}
+
+#profile-name {
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    padding-bottom: 10px;
+}
+
+#profile-bio {
+    flex: 1;
+}
+
+#profile-email {
+    margin-top: auto;
+    color: whitesmoke;
+    font-size: 0.9em;
+}
