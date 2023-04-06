@@ -1,5 +1,3 @@
-// pat2bEq3dsaXHSBH9.2edd33a7b1c2de8fd5e4fe14b82900cf807d2c9b56dfead6a8bdd48715826409
-
 fetch(
     `https://api.airtable.com/v0/appHwUzo4ARCQQlwr/Profiles?maxRecords=1000&view=Grid%20view`,
     {
@@ -12,9 +10,9 @@ fetch(
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data.records);
         datas = data.records;
         add_data(data.records);
+        unload();
     });
 
 function add_data(data) {
@@ -27,12 +25,10 @@ function create_person(data, id) {
     let link = document.createElement("a");
     link.className = "profile-link";
     link.href = "/profile.html?id=" + id;
-    let div = document.createElement("div");
-    div.className = "person-element";
-    data.Photo = data.Photo??[{url:""}]; // change second part to default image
-    div.innerHTML = `<img class="person-profile" 
-        src="${data.Photo[0].url}"> 
+    link.className = "person-element";
+    data.Photo = data.Photo??[{url: "../img/user.png"}];
+    link.innerHTML = `<div class="person-profile" 
+        style="background-image: url(${data.Photo[0].url})"></div>
         <div class="person-name">${data.Name}</div>`;
-    link.appendChild(div);
-    return link
+    return link;
 }

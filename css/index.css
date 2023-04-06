@@ -122,7 +122,8 @@
 }
 
 #viewAllEvents,
-#viewAllBlogs{
+#viewAllBlogs,
+#viewMoreAbout {
   clear: both;
   display: block;
   margin: auto;
@@ -138,20 +139,23 @@
   transition: 0.3s all;
 }
 #viewAllEvents span,
-#viewAllBlogs span{
+#viewAllBlogs span,
+#viewMoreAbout span{
   color: rgb(4, 4, 108);
   vertical-align: bottom;
   font-size: 18px;
   font-weight: 600;
 }
 #viewAllEvents:hover,
-#viewAllBlogs:hover{
+#viewAllBlogs:hover,
+#viewMoreAbout:hover{
   background: #000;
   color: #fff;
   letter-spacing: 1px;
 }
 #viewAllEvents:hover span,
-#viewAllBlogs:hover span{
+#viewAllBlogs:hover span,
+#viewMoreAbout:hover span{
   color: #fff;
 }
 
@@ -306,11 +310,14 @@
 #blogsGrid{
   overflow: hidden;
 }
-
-#blogsGrid > a{
-  text-decoration: none;
+#blogsGrid .row{
   float: left;
-  width: calc(100% / 2 - 4px);
+  width: 50%;
+}
+
+#blogsGrid .row > a{
+  text-decoration: none;
+  display: block;
   box-sizing: border-box;
   border: 1px solid grey;
   margin: 2px;
@@ -320,13 +327,12 @@
 }
 #blogsGrid h2{
   padding: 20px 10px 0 10px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 @media screen and (max-width: 600px){
-  #blogsGrid > a{
+  #blogsGrid .row{
     width: 100%;
+  }
+  #blogsGrid .row > a{
     margin: 2px 0;
   }
 }
@@ -347,7 +353,7 @@
   padding: 5px 10px;
   border-radius: 5px;
   border: 1px solid #fff;
-  margin: 0 2px;
+  margin: 2px;
   transition: 0.3s all;
 }
 .blogAuthor{
@@ -362,13 +368,13 @@
   margin-right: 10px;
 }
 
-#blogsGrid > a:hover{
+#blogsGrid .row > a:hover{
   background:#fff;
 }
-#blogsGrid a:hover *{
+#blogsGrid .row > a:hover *{
   color: #000;
 }
-#blogsGrid a:hover .blogCategories span{
+#blogsGrid .row > a:hover .blogCategories span{
   border-color: #000;
 }
 
@@ -429,7 +435,6 @@
   width: 32px;
   height: 32px;
 }
-
 
 #contactDetails .socials a.facebook{
   background-color: #1877f2;

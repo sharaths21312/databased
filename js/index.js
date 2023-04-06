@@ -139,7 +139,7 @@ function loadBlogs({ feed }) {
       var thumbSrc = "img/Backgrounds/Doubs.png";
     }
 
-    document.querySelector("#blogsGrid").innerHTML += `
+    document.querySelectorAll("#blogsGrid .row")[i % 2].innerHTML += `
     <a href="${entry.link[0].href}">
       <div
         class="img-container"

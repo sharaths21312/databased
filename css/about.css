@@ -1,137 +1,88 @@
-.person-profile {
-    width: 120px;
-    height: 120px;
-    /* border-radius: 50%; */
+#title {
+  background-image: url(../img/Backgrounds/Waimakariri.png);
+  text-align: center;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+#title h1 {
+  font-size: 25vw;
+  line-height: 100vh;
+}
+
+main {
+  margin: 50px auto;
+}
+
+.about-content {
+  text-align: justify;
+}
+
+.title {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 40px;
+  margin: 50px 0 25px 0;
+  text-align: center;
 }
 
 #people-list {
-    display: flex;
-    flex-wrap: wrap;
-    /* align-content: center; */
-    justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .person-element {
-    display: flex;
-    margin: 10px;
-    min-width: 150px;
-    min-height: 150px;
-    max-width: fit-content;
-    align-items: center;
-    padding: 20px;
-    color: black;
-    flex-direction: column;
+  width: 180px;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 2px;
+  margin: 25px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.person-profile {
+  width: 80%;
+  padding-top: 80%;
+  background-size: cover;
+  background-position: center;
+  transition: 0.3s all;
+  border-radius: 100%;
+  display: flex;
+  position: relative;
+}
+.person-profile::before {
+  content: "";
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  border-radius: 100%;
+  transition: 0.3s all;
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  border: 5px solid transparent;
+  transition: 0.3s all;
 }
 
 .person-name {
-    padding-top: 10px;
-    align-self: center;
-    justify-self: center;
+  padding-top: 20px;
+  transition: 0.3s all;
+  position: relative;
+  transition: 0.3s all;
+  top: 0;
 }
-
-.person-profile:hover {
-    transform: scale(1.1);
+.person-element:hover .person-profile {
+  transform: scale(1.1);
 }
-
-@media only screen and (max-width: 800px) {
-    .about-content {
-        width: calc(100% - 20px);
-    }
-
-    #about img {
-        width: 100%;
-    }
-
-    #about,
-    #events,
-    #blogs {
-        padding: 100px 5px;
-    }
+.person-element:hover .person-profile::before {
+  border-color: #fff;
 }
-
-@media only screen and (max-width: 550px) {
-    .nav-list-link {
-        display: none;
-    }
-
-    #nav-hamburger {
-        display: inline-block;
-    }
-}
-
-body {
-    background: linear-gradient(#180834 0,
-            #26032c calc(100vh + 0px),
-            rgb(16, 16, 16));
-}
-
-#about-us {
-    display: grid;
-    margin-inline: 10%;
-    min-height: 100vh;
-    text-align: center;
-    align-items: center;
-    font-size: 3em;
-}
-
-#about-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-block-end: 50px;
-}
-
-#about-img {
-    width: 40vw;
-}
-
-#about-para {
-    max-width: 40%;
-}
-#more-content {
-    padding-inline: 20%;
-    text-align: center;
-    margin-block: 40px;
-}
-
-.profile-link {
-    text-decoration: none;
-}
-
-h2 {
-    font-size: 2em;
-    margin-block: 40px;
-    text-align: center;
-}
-
-#contact-details {
-    display: grid;
-    justify-content: center;
-}
-#email-desc, #address-desc {
-    width: fit-content;
-    align-self: center;
-}
-#email-desc {
-    margin-block-end: 20px;
-}
-
-.desc {
-    color: darkgray;
-}
-
-#contact-details {
-    display: flex;
-    flex-direction: row;
-    margin-inline: 10%;
-}
-
-#contact-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* align-items: stretch; */
-    flex: 1;
-    margin-inline: 20px;
+.person-element:hover .person-name {
+  top: 20px;
 }
