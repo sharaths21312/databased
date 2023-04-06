@@ -57,7 +57,9 @@ fetch(
           "#eventModal .modalImg"
         ).style.backgroundImage = `url(${imgSrc[0]})`;
         document.querySelector("#eventModal .imagesButtons").innerHTML =
-          `<button onClick="eventsModalImage(this)"></button>`.repeat(imgSrc.length);
+          `<button onClick="eventsModalImage(this)"></button>`.repeat(
+            imgSrc.length
+          );
         document
           .querySelector("#eventModal .imagesButtons button")
           .classList.add("active");
@@ -90,19 +92,12 @@ fetch(
       });
     });
     unload();
-    resize();
   });
-
-window.addEventListener("resize", resize);
-
-function resize() {
-  document.querySelectorAll("#eventsGrid > div > p").forEach(function (div) {
-    console.log();
-  });
-}
 
 function eventsModalImage(e) {
-  var i = Array.from(document.querySelectorAll("#eventModal .imagesButtons button")).indexOf(e);
+  var i = Array.from(
+    document.querySelectorAll("#eventModal .imagesButtons button")
+  ).indexOf(e);
   e.addEventListener("click", function () {
     document
       .querySelector("#eventModal .imagesButtons button.active")
@@ -116,6 +111,34 @@ function eventsModalImage(e) {
   });
 }
 
-document.querySelector("#closeEventModal").addEventListener("click", function () {
-  document.querySelector("#eventModal").style.display = "none";
-});
+document
+  .querySelector("#closeEventModal")
+  .addEventListener("click", function () {
+    document.querySelector("#eventModal").style.display = "none";
+  });
+
+function loadBlogs({ feed }) {
+  var i = 0;
+  feed.entry.forEach(function (entry) {
+    if (i == 3) return;
+    var categoryTags = "";
+    if (entry.category) {
+      entry.category.forEach(function (category) {
+        categoryTags += `<span>${category.term}</span>`;
+      });
+    }
+    var authorImg = entry.author[0].gd$image.src;
+    if(authorImg.indexOf("http") == -1) authorImg = "http://" + authorImg;
+    document.querySelector("#blogsGrid").innerHTML += `
+    <a href="${entry.link[0].href}">
+      <div
+        class="img-container"
+        style="background-image: url(img/backgroundsbundle/Doubs.png)"
+      ></div>
+      <h2>${entry.title.$t}</h2>
+      <p class="blogCategories">${categoryTags}</p>
+      <p class="blogAuthor"><img src="${authorImg}"> <span>${entry.author[0].name.$t}</span></p>
+    </a>`;
+    i += 1;
+  });
+}

@@ -121,7 +121,8 @@
   }
 }
 
-#viewAllEvents{
+#viewAllEvents,
+#viewAllBlogs{
   clear: both;
   display: block;
   margin: auto;
@@ -136,18 +137,21 @@
   text-align: center;
   transition: 0.3s all;
 }
-#viewAllEvents span{
+#viewAllEvents span,
+#viewAllBlogs span{
   color: rgb(4, 4, 108);
   vertical-align: bottom;
   font-size: 18px;
   font-weight: 600;
 }
-#viewAllEvents:hover{
+#viewAllEvents:hover,
+#viewAllBlogs:hover{
   background: #000;
   color: #fff;
   letter-spacing: 1px;
 }
-#viewAllEvents:hover span{
+#viewAllEvents:hover span,
+#viewAllBlogs:hover span{
   color: #fff;
 }
 
@@ -299,6 +303,10 @@
   margin: 0 2px;
 }
 
+#blogsGrid{
+  overflow: hidden;
+}
+
 #blogsGrid > a{
   text-decoration: none;
   float: left;
@@ -313,9 +321,6 @@
 #blogsGrid h2{
   padding: 20px 10px 0 10px;
 }
-#blogsGrid p{
-  padding: 5px 10px 20px 10px;
-}
 
 #blogsGrid .img-container{
   width: 100%;
@@ -324,9 +329,40 @@
   background-position: center;
 }
 
-#blogsGrid > a:hover{
-  background:rgb(16, 16, 16);
+.blogCategories{
+  padding: 10px;
 }
+.blogCategories span{
+  display: inline-block;
+  font-size: 0.9em;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  margin: 0 2px;
+  transition: 0.3s all;
+}
+.blogAuthor{
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.blogAuthor img{
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  margin-right: 10px;
+}
+
+#blogsGrid > a:hover{
+  background:#fff;
+}
+#blogsGrid a:hover *{
+  color: #000;
+}
+#blogsGrid a:hover .blogCategories span{
+  border-color: #000;
+}
+
 #contact{
   overflow: hidden;
 }
